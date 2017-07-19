@@ -3,32 +3,32 @@
 #     Weather Synth  0.1
 #
 #     API SCRAPE
-#import the requests library
+    #import the requests library
 import requests
 
-#import the json library
+    #import the json library
 
 import json
 
-#import the math plot lib
+    #import the math plot lib
 import matplotlib.pyplot as plt
-#5 day, 3 hour increment data request
-#Request weather info for Atlanta (city code4180439) in JSON format, imperial units and add API KEY
+    #5 day, 3 hour increment data request
+    #Request weather info for Atlanta (city code4180439) in JSON format, imperial units and add API KEY
 
-#response = requests.get("http://api.openweathermap.org/data/2.5/forecast?id=4180439&mode=JSON&units=imperial&APPID=399358a30ccc7fc4bd37c778a5967cc5")
+    #response = requests.get("http://api.openweathermap.org/data/2.5/forecast?id=4180439&mode=JSON&units=imperial&APPID=399358a30ccc7fc4bd37c778a5967cc5")
 
-#Current Data request
+    #Current Data request
 response = requests.get("http://api.openweathermap.org/data/2.5/weather?id=4180439&mode=JSON&units=imperial&APPID=399358a30ccc7fc4bd37c778a5967cc5")
 
-#print request status
+    #print request status
 
 status_code = response.status_code
 print(status_code)
 
-#extract list of weather data, starting with temperature
+    #extract list of weather data, starting with temperature
 json_data = response.json()
 
-#5 hour data set manipulation#######################################################
+#5hour data set manipulation#######################################################
 
 #weather_data = json_data["list"]
 #ll = len(weather_data)
