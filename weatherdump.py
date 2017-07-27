@@ -1,5 +1,4 @@
-####################################################################################################################
-####################################################################################################################
+#
 #     Weather Synth  0.1
 #
 #     API SCRAPE
@@ -12,10 +11,6 @@ import json
 
     #import the math plot lib
 import matplotlib.pyplot as plt
-    #5 day, 3 hour increment data request
-    #Request weather info for Atlanta (city code4180439) in JSON format, imperial units and add API KEY
-
-    #response = requests.get("http://api.openweathermap.org/data/2.5/forecast?id=4180439&mode=JSON&units=imperial&APPID=399358a30ccc7fc4bd37c778a5967cc5")
 
     #Current Data request
 response = requests.get("http://api.openweathermap.org/data/2.5/weather?id=4180439&mode=JSON&units=imperial&APPID=399358a30ccc7fc4bd37c778a5967cc5")
@@ -28,24 +23,7 @@ print(status_code)
     #extract list of weather data, starting with temperature
 json_data = response.json()
 
-#5hour data set manipulation#######################################################
-
-#weather_data = json_data["list"]
-#ll = len(weather_data)
-
-
-#temp_dat = [0] * ll
-#for i in xrange(0, ll):
- #   temp_dat[i] = weather_data[i]["main"]['temp']
-
-#print(temp_dat)
-
-#plot temperature values
-#plt.plot(temp_dat)
-#plt.show()
-##############################################################################
-
-#Current Data Manipulation##########################################################
+#Current Data Manipulation
 #
 #current temp in Fahrenheit
 tc = json_data["main"]['temp']
@@ -63,25 +41,7 @@ print(wind)
 cloud = json_data["clouds"]['all']
 print(cloud)
 
-############################################################################
-
-
-#extract weather details from data
-#weather_desc = weather_data["weather"][0]["description"]
-#print(weather_desc)
-
-
-
-#w_string = json.dumps(json_data["list"][0]["wind"])
-#print(w_string)
-
-
-
-
-#######################################################################################################################
 #     PYO MUSIC SYNTHESIS
-
-
 
 from pyo import *
 s = Server(duplex=0).boot()
